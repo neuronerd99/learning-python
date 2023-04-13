@@ -1,13 +1,13 @@
 import random
 
-def get_choices():
-    player_choice = input ("Enter a choice (rock, paper, scissors):")
-    options = ["rock", "paper", "scissors"]
-    computer_choice = random.choice(options)
-    choices = {"player": player_choice, "computer": computer_choice}
+def get_choices(): ## function to create player and computer choices    
+    player_choice = input ("Enter a choice (rock, paper, scissors):") ## player choice defined by user input
+    options = ["rock", "paper", "scissors"] ## choices can only be selected from this list
+    computer_choice = random.choice(options) ## computer choice is randomly selected from options
+    choices = {"player": player_choice, "computer": computer_choice} ## dictionary in which choices are stored
     return choices
 
-def check_win(player, computer):
+def check_win(player, computer): ## function to check winner
     print (f"You chose {player}, computer chose {computer}")
     if player == computer:
         return "It's a tie!"
@@ -28,6 +28,6 @@ def check_win(player, computer):
             return "Rock smashes scissors! You lose :("
 
 choices = get_choices()
-result = check_win(choices["player"], choices["computer"])
-print (result)
+result = check_win(choices["player"], choices["computer"]) ## calling check_win function with player and computer choices as arguments; choices["player"] value is obtained after user input and is stored in dict (same for computer choice)
+print(result)
 
